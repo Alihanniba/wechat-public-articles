@@ -1,11 +1,12 @@
 ### ubuntu12.04 Nginx1.10 + PHP7 + Nodejs7 + Laravel环境安装
 
-####1.换源
+#### 1.换源
 先下载个vim编辑器
 
 ```
 sudo apt-get install vim
 ```
+
 然后备份一份官方的源文件
 
 ```
@@ -17,6 +18,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 ```
 sudo vim /etc/apt/sources.list
 ```
+
 然后把下面一段复制进去覆盖原来的
 
 ```
@@ -31,6 +33,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted univers
 deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
 ```
+
 更新列表
 
 ```
@@ -48,10 +51,14 @@ sudo apt-get update
 	把下面两个源添加到源文件里面,当然你也可以vim 编辑,不过下面方式方便
 	
 	```
+	
 	echo deb http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.list
-echo deb-src http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.list
+	echo deb-src http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.list
+	
 	```
+	
 	更新并导入升级Key,ubuntu会自带wget工具
+	
 	
 	```
 	wget http://nginx.org/keys/nginx_signing.key && apt-key add nginx_signing.key && apt-get update && apt-get install nginx
@@ -63,6 +70,7 @@ echo deb-src http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.
 	apt-get install software-properties-common
 	apt-get install python-software-properties
 	```
+	
 	接着
 	
 	升级
@@ -76,6 +84,7 @@ echo deb-src http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.
 	```
 	add-apt-repository ppa:nginx/stable && apt-get update && apt-get install nginx
 	```
+	
 	<img src="./1.png" height="100px" width="500px" />
 	<img src="./5.png" height="180px" width="500px" />
 	
@@ -86,6 +95,7 @@ echo deb-src http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.
 	```
 	sudo apt-get install mysql-server
 	```
+	
 	这步才做会要你输入你的数据库密码,完了点ok就行
 	
 	接着,运行包含的安全和数据库初始化脚本
@@ -98,6 +108,7 @@ echo deb-src http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.
 	**install mysql5.7,其实上面步骤可以省略,如果你只想用5.7版本的话**
 	
 	如果要安装MySQL 5.7，您需要从MySQL APT存储库页面添加较新的APT软件包存储库
+	
 	
 	```
 	wget http://dev.mysql.com/get/mysql-apt-config_0.6.0-1_all.deb
@@ -134,6 +145,7 @@ echo deb-src http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.
 	```
 	mysql --version
 	```
+	
 	<img src="./2.png" height="50px" width="500px" />
 	如果你使用的MySQL版本早于5.7.6，你应该通过运行mysql_install_db来初始化数据目录
 
