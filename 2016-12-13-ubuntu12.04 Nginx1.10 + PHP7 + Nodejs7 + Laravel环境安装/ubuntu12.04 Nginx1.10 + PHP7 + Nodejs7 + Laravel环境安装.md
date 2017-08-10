@@ -40,7 +40,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted unive
 sudo apt-get update 
 ```
 
-###2. 环境安装(都以最新的版本为准,当下小白属)
+### 2. 环境安装(都以最新的版本为准,当下小白属)
 * 安装nginx
 
 	```
@@ -147,6 +147,7 @@ sudo apt-get update
 	```
 	
 	<img src="./2.png" height="50px" width="500px" />
+	
 	如果你使用的MySQL版本早于5.7.6，你应该通过运行mysql_install_db来初始化数据目录
 
 	```
@@ -220,7 +221,7 @@ sudo apt-get update
 
 **以上记录仅摘抄于网络,仅作记录**
 
-######参考文献
+###### 参考文献
 *	[阿里云Ubuntu14+PHP7+Nginx+Mysql环境搭建](http://www.jianshu.com/p/1d312d9f1be1)
 * 	[How To Install MySQL on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04)
 	
